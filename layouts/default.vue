@@ -11,13 +11,15 @@
       <v-spacer />
       <v-btn
         color="secondary"
+        v-if="Object.keys(this.$store.state.currentUser).length != 0"
       >
-        Email
+        {{ this.$store.state.currentUser.email }}
       </v-btn>
       <v-btn
         color="secondary"
         class="ml-4"
         @click="logout"
+        v-if="Object.keys(this.$store.state.currentUser).length != 0"
       >
         Выйти
       </v-btn>
@@ -50,6 +52,7 @@ export default {
   methods: {
     logout() {
       this.$router.push('/login')
+      this.$store.dispatch('deleteCurrentUser')
     }
   }
 }

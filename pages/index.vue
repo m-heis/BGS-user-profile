@@ -4,7 +4,7 @@
       <v-card class="elevation-12" max-width="500">
         <v-card-text>
           <v-img
-            src="https://cdn.vuetifyjs.com/images/cards/mountain.jpg"
+            :src="this.$store.state.currentUser.img"
             height="194"
           ></v-img>
         </v-card-text>
@@ -12,12 +12,12 @@
           <v-row>
             <v-col class="text-center">
               <h3>
-                Saken
+                {{ this.$store.state.currentUser.name }}
               </h3>
             </v-col>
             <v-col>
               <h3>
-                saken@gmail.com
+                {{ this.$store.state.currentUser.email }}
               </h3>
             </v-col>
           </v-row>
@@ -30,6 +30,11 @@
 <script>
 
 export default {
-  layout: 'default'
+  layout: 'default',
+  mounted() {
+    if (Object.keys(this.$store.state.currentUser).length == 0) {
+      this.$router.push('/login')
+    }
+  }
 }
 </script>
