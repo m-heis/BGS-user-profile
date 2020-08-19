@@ -8,6 +8,19 @@
       color="primary"
     >
       <v-toolbar-title v-text="title" />
+      <v-spacer />
+      <v-btn
+        color="secondary"
+      >
+        Email
+      </v-btn>
+      <v-btn
+        color="secondary"
+        class="ml-4"
+        @click="logout"
+      >
+        Выйти
+      </v-btn>
     </v-app-bar>
     <v-main>
       <v-container>
@@ -32,6 +45,11 @@ export default {
       clipped: false,
       fixed: false,
       title: 'BGS user profile'
+    }
+  },
+  methods: {
+    logout() {
+      this.$router.push('/login')
     }
   }
 }
