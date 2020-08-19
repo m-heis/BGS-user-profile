@@ -1,20 +1,16 @@
 # BGS-user-profile
 
-## Build Setup
+## Инструкция для запуска приложения
 
 ```bash
-# install dependencies
-$ npm install
+1) Скачайте zip архив файл к себе на ПК
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+2) Разархивировуйте файл. Откройте проект через терминал.
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+3) Установите все необходимые пакеты запустив команду: npm install
 
-# generate static project
-$ npm run generate
-```
+4) После завершения установки, наберите команду: npm run dev
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+5) После завершения, откройте в браузере: http://localhost:3000/login
+
+6) Наслаждайтесь моим творением :)
